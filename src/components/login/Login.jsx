@@ -13,7 +13,7 @@ function Login() {
     const [password ,setPassword] =useState('')
     const [emptyPass ,setEmptyPass] =useState(false)
     const [emptyUserName ,setEmptyUserName] =useState(false)
-    const [userData ,setUserData] =useState(false);
+    
 
     useEffect(()=>{
         toast.info(`
@@ -54,7 +54,17 @@ function Login() {
 
     function handleLogin(event){
         event.preventDefault();
-        if(emptyPass || emptyUserName)return;
+        if(emptyPass || emptyUserName){
+            toast.error('لطفا فیلد هارا به درستی پر کنید.', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                draggable: true,
+                progress: undefined,
+                });
+                return;
+        }
 
         const result =loginValidator(userName ,password)
         if(result){

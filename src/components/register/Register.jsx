@@ -105,7 +105,17 @@ function Register() {
 
     function handleRegister(event){
         event.preventDefault();
-        if(emptyEmail ||emptyPass ||emptyPassVerify ||emptyUserName || !passwordLength(password)|| !passwordVerifyValidate(password ,passwordVerify)|| !emailVlidate(userEmail) || !userNameVlidate(userName))return;
+        if(emptyEmail ||emptyPass ||emptyPassVerify ||emptyUserName || !passwordLength(password)|| !passwordVerifyValidate(password ,passwordVerify)|| !emailVlidate(userEmail) || !userNameVlidate(userName)){
+            toast.error('لطفا فیلد هارا به درستی پر کنید.', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                draggable: true,
+                progress: undefined,
+                });
+            return;
+        }
 
         toast.success(`${userName} عزیز ثبت نام شما انجام شد .`, {
             position: "top-right",
