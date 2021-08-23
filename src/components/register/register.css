@@ -1,0 +1,16 @@
+.input-danger {
+    border-color: red!important;
+    border-width: 2px;
+    z-index: 100;
+}
+
+.input-success {
+    border-color: green!important;
+    border-width: 2px;
+    z-index: 101;
+}
+
+.error-message {
+    color: red;
+    margin-top: 1rem;
+}
